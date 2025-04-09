@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Background Color Changer</title>
+</head>
+<body>
+    <h2>Background Color Changer Exercise</h2>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+
+
+    <script>
+        const startBtn=document.querySelector('#start')
+        const stopBtn=document.querySelector('#stop')
+
+        let interval;
+
+        function random(number){
+             return Math.floor(Math.random()*(number+1))
+            
+        }
+
+        startBtn.addEventListener('click',function(){
+            if(!interval)
+            {
+               interval= setInterval(() => {
+                    document.body.style.backgroundColor=`rgb(${random(255)},${random(255)},${random(255)})`
+                }, 1000);
+            }
+        })
+
+        stopBtn.addEventListener('click',function(){
+            clearInterval(interval)
+            interval=null
+        })
+
+
+
+    </script>
+</body>
+</html>

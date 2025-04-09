@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h2 id="heading">Document Object Model</h2>
+    <h2 >Document Object Model2</h2>
+    <h2 id="heading2">Document Object Model3</h2>
+    <p>Practicing the Dom </p>
+    <h3 class="detail">
+        Details of Dom
+    </h3>
+    <p class="detail">
+        This is another Element
+    </p>
+
+
+
+    <ul>
+        <li class="items">1</li>
+        <li class="items">2</li>
+        <li class="items">3</li>
+        <li class="items">4</li>
+    </ul>
+    <script>
+       
+        const h2=document.getElementById("heading");
+        h2.innerHTML="<h2>This is Dom Manipulation</h2>"
+        h2.className="heading2"
+        h2.style.color="red"
+        console.log( h2.getAttribute("class"))
+        h2.setAttribute("class","newHeading")
+        console.log(h2)
+       
+        const p=document.getElementsByClassName("detail")
+        console.log(p)
+     
+        const p1=document.getElementsByTagName("p")
+        console.log(p1)
+        // selecting with query selector (querySelector and querySelectorAll)
+
+        const query1=document.querySelector('h2')
+        console.log("query 1",query1)
+
+        const query2=document.querySelector("#heading2")
+        console.log("query2",query2)
+
+        console.log(document.querySelector(".detail"))
+        console.log(document.querySelectorAll("h2")) //it will return nodeList
+        const list=document.querySelectorAll("h2")
+        console.log("list",list)
+        const mylistArray=Array.from(list)
+        console.log("mylistArray",mylistArray)
+        list[2].style.color="green"
+
+        const newElement=document.createElement("p")
+        newElement.innerText="I am added through the dom"
+        document.body.appendChild(newElement)
+
+
+        const mylist=document.getElementsByClassName("items")
+        // mylist.forEach((item)=>item.style.color="green")
+        const listArray=Array.from(mylist)
+        listArray.forEach((item)=>item.style.color="red")
+        console.log("list",mylist)
+        console.log("array",listArray)
+    </script>
+</body>
+</html>

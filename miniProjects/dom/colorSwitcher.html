@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switcher</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .main{
+            margin-top: 10rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            width: 100vw;
+            height: 100%;
+            gap: 2rem;
+
+        }
+        .boxes button{
+            width: 2rem;
+            height: 2rem;
+            padding: 3.4rem;
+            border:2px solid white;
+
+            
+        }
+        .boxes button:nth-child(1){
+          
+            background-color: rgb(235, 95, 95);
+            
+        }
+        .boxes button:nth-child(2){
+            background-color: rgb(55, 255, 0);
+         
+        }
+        .boxes button:nth-child(3){
+            background-color: rgb(255, 0, 170);
+           
+        }
+        .boxes button:nth-child(4){
+            background-color: red;
+          
+        }
+        
+    </style>
+</head>
+<body id="body">
+    <div class="main">
+        <h2>Color Scheme Switcher</h2>
+        <div class="boxes">
+            <!-- <button onclick="addBackground(this)"></button>
+            <button onclick="addBackground(this)"></button>
+            <button onclick="addBackground(this)"></button>
+            <button onclick="addBackground(this)"></button> -->
+            <button></button><button></button><button></button><button></button>
+        </div>
+        <p>Try to click one of the colors above to change the background color of page!</p>
+    </div>
+
+    <script>
+
+    //    function addBackground(btn){
+    //     const bgColor= window.getComputedStyle(btn).backgroundColor
+    //     console.log("color",bgColor)
+    //     const body=document.getElementById('body')
+    //     console.log(body)
+    //     body.style.backgroundColor=`${bgColor}`
+    //    }
+
+    //    second way to achieve it 
+
+       document.querySelectorAll(".boxes button").forEach((btn) => {
+        btn.addEventListener('click',function(e){
+            const bgColor=window.getComputedStyle(btn).backgroundColor
+            console.log(bgColor)
+            document.body.style.backgroundColor=`${bgColor}`
+            console.log(e)
+
+        })
+       });
+
+    //    console.log(document.body)
+    //    console.log(document.head)
+    //    console.log(document.scripts)
+       
+    </script>
+</body>
+</html>

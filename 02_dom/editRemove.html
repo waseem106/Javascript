@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove </title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+
+    <script>
+        let mycolor=["green","yellow","red","blue"]
+        let colorIndex=0
+        function addLanguage(langName)
+        {
+            const li=document.createElement("li")
+            li.textContent=`${langName}`
+            li.style.color=mycolor[colorIndex]
+            colorIndex++
+            const language=document.querySelector(".language")
+            language.append(li)
+        }
+
+        function addOptimalLang(langName){
+            const li=document.createElement('li')
+            li.appendChild(document.createTextNode(`${langName}`))
+            document.querySelector(".language").append(li)
+        }
+
+        addLanguage("TypeScript")
+        addLanguage("Python")
+        addLanguage("Ruby")
+        addLanguage("Tailwind")
+        addLanguage("Next")
+        addOptimalLang("TypeScript")
+        addOptimalLang("TypeScript")
+
+
+        //editing
+        const editELement=document.querySelector('li:nth-child(2)')
+        // editELement.textContent="TypeScript(Edited)"   //simple approach
+
+        const newElement=document.createElement('li')
+        newElement.textContent="TypeScriptOtimal(Edited)"
+        editELement.replaceWith(newElement)
+
+
+
+        //remove 
+        const lastLanguage=document.querySelector('li:last-child')
+        lastLanguage.remove()
+      
+    </script>
+
+</body>
+</html> 

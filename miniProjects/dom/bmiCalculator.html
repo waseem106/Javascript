@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        html,
+        body {
+            font-size: 10px;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: 40%;
+            height: 90%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 4rem;
+            font-size: 2rem;
+            border-radius: .4rem;
+
+        }
+
+        .main input,
+        button {
+            margin-top: 1rem;
+            padding: 1rem;
+            outline: none;
+            border-radius: .4rem;
+            width: 100%;
+            font-size: 1.7rem;
+
+        }
+
+        .main label {
+            display: flex;
+            font-size: 1.5rem;
+
+        }
+
+        .group {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: .4rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="card">
+            <h2 style="margin-bottom: 10px;">BMI Calculator</h2> 
+            <form>
+            
+                <div class="group">
+                    <label for="height" ;">Hieght in Feet</label>
+                    <input type="number" style="margin-bottom: 10px;" id="hieght" step="0.01">
+                </div>
+                <div class="group">
+                    <label for="weight">Weight in kgs</label>
+                    <input type="number" style="margin-bottom: 10px;" id="weight" step="0.01">
+                </div>
+                <button type="submit" style="margin-bottom: 20px;">Calculate</button>
+            </form>
+            <p>Underweight: BMI less than 18.5</p>
+            <p>Normal weight: BMI between 18.5 and 24.9</p>
+            <p> Overweight: BMI between 25 and 29.9</p>
+            <p>Obesity: BMI 30 or higher</p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const form = document.querySelector("form")
+        let displayed=false
+       
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            const weight = parseInt(document.querySelector("#weight").value)
+            let hieght = parseFloat(document.querySelector("#hieght").value)
+            hieght = hieght * 0.3048
+            const bmi = parseFloat(weight / hieght ** 2)
+            const h2 = document.createElement('h2')
+            if (bmi >= 18.5 && bmi < 25) {
+                h2.style.color = "green"
+            }
+            else {
+                h2.style.color = "red"
+            }
+            
+            if(!isNaN(bmi))
+            {
+                if(!displayed)
+                {
+                 h2.appendChild(document.createTextNode(`${bmi}`))
+                form.append(h2)
+                displayed=true
+                }
+            }
+           
+            console.log(bmi)
+        })
+
+
+
+
+
+
+        // document.querySelector("button").addEventListener('submit', function (e) {
+        //     const weight = document.getElementsByName("weight")
+        //     console.log(weight)
+        // })
+
+
+
+    </script>
+</body>
+
+</html>

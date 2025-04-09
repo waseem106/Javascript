@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital CLock</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            font-size: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .main{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        #clock{
+            background-color: rgb(226, 173, 14);
+            color: black;
+            padding: 2rem;
+            border-radius: .5rem;
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body style="background-color: #212121;color: #fff;"> 
+    
+    <div class="main">
+        <div id="banner">Digital Clock</div>
+        <div id="clock"></div>
+    </div>
+
+    <script>
+      
+
+        const clock=document.querySelector('#clock')
+        setInterval(function(){
+        let date=new Date()
+        clock.innerHTML=date.toLocaleTimeString()
+        },1000)
+
+    </script>
+
+</body>
+</html>

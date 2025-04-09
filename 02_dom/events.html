@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body style="background-color: #212121; color: aliceblue;">
+    <h2>Amzaing Images</h2>
+    <div >
+        <ul id="images" style="display: flex; flex-wrap: wrap; width: 70%;">
+
+            <li><img id="photoshop" src="https://tse4.mm.bing.net/th?id=OIP.lgDQqkE4_znrSAkTr_ZvBAHaGJ&w=393&h=393&c=7"
+                    alt="" width="200px"></li>
+            <li><img id="japan" src="https://tse2.mm.bing.net/th?id=OIP.tYgERQs-eycMAZ38L5AmiQHaE8&w=316&h=316&c=7"
+                    width="200px" alt=""></li>
+            <li><img id="river" src="https://tse2.mm.bing.net/th?id=OIP.EBc-QbcqkybOeP61PQbOngHaEK&w=266&h=266&c=7"
+                    width="200px" alt=""></li>
+            <li><img id="owl" src="https://tse2.mm.bing.net/th?id=OIP.E-_qdIoRTt_FyzTJwF0gmQHaJ4&w=474&h=474&c=7"
+                    width="200px" alt=""></li>
+            <li><a style="color: aliceblue;" id="google" href="https://www.google.co.uk/">Google</a></li>
+            <li><button id="button">Change Background Color</button></li>
+            <button id="button2">Focus me</button>
+        </ul>
+        <input type="text" id="textbox">
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+        //? Events objects are automatically passed to the event handlers to provide some extra features and information
+        // keyboard events keydown
+        const textbox=document.querySelector('#textbox')
+        const output=document.querySelector('#output')
+
+        textbox.addEventListener('keydown',function(e){
+            output.textContent=`You pressed the "${e.key}"`
+        })
+        //preventing default
+        
+
+
+        // document.getElementById('photoshop').onclick=function(){
+        //     alert("Photoshop")
+        // }
+
+        document.getElementById('photoshop').addEventListener('click', function () {
+            alert("Photoshop")
+        })
+
+        document.getElementById('owl').addEventListener('click', function (e) {
+            console.log(e)
+            e.target.style.border='2px solid white '
+        }) //learn some of the additional topics like type, timestamps, defaultPrevented
+
+
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1));
+        }
+        document.querySelector('#button').addEventListener('click', function (e) {
+            const randColor = `rgb(${random(255)},${random(255)},${random(255)})`
+            document.body.style.backgroundColor = randColor
+            console.log(e.button)
+        })
+
+        // document.querySelector('#button2').addEventListener('dblclick',function(){
+        //     document.body.style.backgroundColor="green"
+        // })
+
+        // document.querySelector('#button2').addEventListener('focus',function(){
+        //     document.body.style.backgroundColor="green"
+        // })
+
+        document.querySelector('#button2').addEventListener('mouseover',function(){
+            document.body.style.backgroundColor="green"
+        })
+        document.querySelector('#button2').addEventListener('mouseout',function(){
+            document.body.style.backgroundColor="#212121"
+        })
+
+        // once we create event listeners we can remove it again using removeEventListener()
+
+        
+
+    </script>
+</body>
+
+</html>

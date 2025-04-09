@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Countdown Timer</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #222;
+            color:#fff;
+        }
+
+        .timer {
+            font-size: 2em;
+            margin: 20px;
+        }
+
+        .event {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Countdown Timer</h1>
+    <div class="event">
+        Event Date: <span id="eventDate"></span>
+    </div>
+    <div class="timer" id="countdown"></div>
+    <div id="testing"></div>
+
+    <script>
+        
+        const targetDate = new Date('2025-03-25T19:37:59');
+        document.getElementById('eventDate').textContent = targetDate.toLocaleString();
+
+        
+       
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now; 
+
+          
+            if (diff <= 0) {
+                document.getElementById('countdown').textContent = "The event has started!";
+                clearInterval(timerInterval); 
+                return;
+            }
+
+        
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+          
+            document.getElementById('countdown').textContent =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+      
+        const timerInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+     document.getElementById('testing').textContent="waseem aziz"
+    </script>
+</body>
+
+</html>

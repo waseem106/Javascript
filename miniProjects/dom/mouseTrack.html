@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracking</title>
+</head>
+<body>
+    <div class="tracker" style="height: 200px; background-color: #eee;">
+        Move mouse here
+        <p>X: <span id="x"></span> | Y: <span id="y"></span></p>
+    </div>
+
+
+
+    <script>
+        const tracker=document.querySelector('.tracker')
+        const x=document.querySelector('#x')
+        const y=document.querySelector('#y')
+
+        tracker.addEventListener('mousemove',function(e){
+            x.textContent=e.clientX;
+            y.textContent=e.clientY;
+        })
+
+    </script>
+</body>
+</html>
