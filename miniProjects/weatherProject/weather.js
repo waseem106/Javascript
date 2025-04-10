@@ -21,8 +21,6 @@ async function getweatherData(){
       console.log(data)
       const {name,sys:{country},weather,main}=data
       console.log({name,country,weather})
-      
-      
       city.innerHTML=name;
       country1.innerHTML=country;
       temp.innerHTML=`${weather[0].description} ${celsius(main.temp)}°C`
@@ -30,6 +28,8 @@ async function getweatherData(){
 
     } catch (error) {
         console.log("Error while getting weather data",error)
+        const result=document.querySelector('.result')
+        result.textContent="No Data Found"
     }
 
 
