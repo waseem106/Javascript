@@ -16,15 +16,12 @@ async function getweatherData(){
       let value =search.value
       console.log("Value from function",value)
       const response=  await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${apiKey}`,{method:"GET"})
-      console.log(response)
       if(!response.ok) throw "City not Found"
       const data=await response.json();
       console.log(data)
       const {name,sys:{country},weather,main}=data
       console.log({name,country,weather})
-
       
-
       
       city.innerHTML=name;
       country1.innerHTML=country;
