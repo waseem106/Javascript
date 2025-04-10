@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html{
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    /* padding-left: 3rem;
+    padding-right: 3rem; */
+}
+
+
+header{
+    width: 100%;
+    height: auto;
+    background-image: url('./375x450.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: bisque; */
+    padding: 1rem 3rem; 
+    color:#fff;
+    
+}
+
+.header h1{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+
+.header .hamburger{
+    font-size: .4rem;
+}
+
+
+.sunsvg{
+    width: 4rem;
+    height: 4rem;
+    fill: white;
+}
+
+
+
+.section{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    width: 100%;
+    padding: 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    
+
+}
+
+
+.result{
+    width: 20rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    border-radius: .6rem;
+    border: 1px solid #313131;
+    background-color: #00000040;
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.section input{
+    width: 50rem;
+    padding: 1rem;
+    /* border-radius: .5rem; */
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+}
+
+input:focus{
+    border-bottom: 2px solid orangered ;
+    border-radius: 0;
+}
+
+
+.submit{
+    padding: 1rem;
+    border-radius: .3rem;
+    border: none;
+    margin: 1rem;
+    width: 10rem;
+}
+
+.submit:hover{
+    background-color: #313131;
+    color: white;
+}
