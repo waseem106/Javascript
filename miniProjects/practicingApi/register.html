@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <style>
+        .form {
+            margin-left: 23%;
+            margin-top: 10%;
+            width: 50%;
+            height: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            outline: none;
+        }
+        .form input,button{
+            padding: .6rem;
+        }
+    </style>
+</head>
+
+<body style="background-color: #313131; color:#fff">
+
+
+    <form class="form">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter your email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your password ">
+
+        <button id="register" type="submit">Register</button>
+    </form>
+
+
+
+    <script>
+        const form = document.querySelector('form')
+        const email = document.querySelector('input[type="email"]')
+        const password = document.querySelector('input[type="password"]')
+        const registerbtn = document.querySelector('#register')
+        let registerapi = `https://staging-api.rewritely.io/api/auth/register`
+
+        async function registerUser(e) {
+            e.preventDefault();
+            try {
+                let emailValue = email.value
+                let passwordValue = password.value
+                console.log(emailValue)
+                console.log(passwordValue)
+
+                if (emailValue.trim() === "" || passwordValue.trim() === "") throw "Email and Password cannot be empty"
+
+                const response = await fetch(`https://staging-api.rewritely.io/api/auth/register`, {
+                    method: "POST",
+                    mode:"cors",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body:JSON.stringify( {
+                        email: emailValue,
+                        password: passwordValue
+                    })
+                })
+                console.log(response)
+
+                if (!response.ok) throw "User donot get registered"
+
+                console.log("User register Successfully", response)
+
+
+            } catch (error) {
+                console.log("Error while registering the user",error)
+            }
+        }
+
+
+        registerbtn.addEventListener('click', function (e) {
+
+            registerUser(e)
+        })
+
+
+    </script>
+
+</body>
+
+</html>

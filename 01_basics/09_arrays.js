@@ -62,7 +62,7 @@ console.log(typeof myString)// string
 
 //slice(startIndex,lastIndex) and splice(startIndex,lastIndex)
 //slice doesnot include the last index and does not change the orginal array
-//sice include the last index but it removes those values from the original array
+//splice include the last index but it removes those values from the original array
 const myNewArray=myArray.slice(1,3)
 console.log("original",myArray) //[ 1, 2, 3, 4, 5, 6 ]
 console.log("slice",myNewArray) // [ 2, 3 ]

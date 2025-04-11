@@ -28,7 +28,9 @@ console.log(newString.trim());
 console.log(newString.trimStart());
 console.log(newString.trimEnd());
 
-//searching in the strings
+
+
+//?searching in the strings
 
 
 
@@ -83,7 +85,7 @@ console.log("match result found",string2.match("locate"))
 
 
 
-//Extracting Parts of a String
+//!Extracting Parts of a String
 
 // 📌 slice(start, end)
 //it extract a part of string
@@ -105,6 +107,7 @@ console.log(text.substring(4, 0)); //Java
 
 //replacing text
 // 📌 replace() & replaceAll()
+// it returns a new string does not change the actual string 
 
 let newstr = "I love JavaScript!";
 console.log(newstr.replace("I", "waseem")); //waseem love Js
@@ -124,7 +127,11 @@ console.log(sentence.replace(/apple/, "my"));
 console.log(sentence.replace(/apple/gi, "change"));
 //now it will work for the all and it will not resolve case sensitive issue
 
-//  Splitting & Joining Strings
+
+
+
+
+//*  Splitting & Joining Strings
 
 // 📌 split() (Convert String → Array)
 //it converts string into array

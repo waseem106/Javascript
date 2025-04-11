@@ -14,6 +14,7 @@ function Person(name,email)
     this.name=name
     this.email=email
 }
+
 //making a function that will be accessible by all objects of constructor
 Person.prototype.greet=function(){
     // console.log(`Welcome ${this.name} `)
@@ -44,7 +45,7 @@ const person = new Person1('Alice');
 
 
 
-// ? Object.create(object(required),properties(optional))
+//? Object.create(object(required),properties(optional))
 // creates an object from existing object  and inherits its methods and properites
 // useCase:inheritance without classes  
 const animal = {
