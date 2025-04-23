@@ -8,6 +8,7 @@ Object.assign(target, source);
 
 // ?Constructor Function 
 // we use constructor function where we have to create multiple objects with same data keys 
+//A constructor function is a regular function used to create and initialize objects. It acts like a blueprint or template for multiple objects with similar structure.
 
 function Person(name,email)
 {
@@ -113,7 +114,7 @@ const user = { name: "John", age: 25 };
 const objTest = { name: "Alice" };
 Object.freeze(obj);
 
-objTest.name = "Bob"; // ❌ Not allowed   (will not give error but no change)
+objTest.name = "Bob"; // Not allowed   (will not give error but no change)
 // console.log(objTest.name); // Alice
 
 
@@ -161,7 +162,7 @@ const obj23 = Object.create({}, {
  const obj231 = { name: "Alice" };
 Object.preventExtensions(obj231);
 
-obj231.age = 30; // ❌ Not allowed
+obj231.age = 30; //  Not allowed
 // console.log(obj231.age); // undefined
 
 //?Object.prototype
@@ -174,8 +175,8 @@ obj231.age = 30; // ❌ Not allowed
 // const obj = { name: "Alice" };
 Object.seal(obj);
 
-obj.age = 30; // ❌ Not allowed
-obj.name = "Bob"; // ✅ Allowed
+obj.age = 30; //  Not allowed
+obj.name = "Bob"; //  Allowed
 
 // console.log(obj); // { name: "Bob" }
 

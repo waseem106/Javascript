@@ -1,5 +1,5 @@
 // block scope    let and const
-// function scope var,let and const
+// function scope var
 //global scope     variables decalred outside functions and blocks are global scoped
 
 
