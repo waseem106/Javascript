@@ -13,7 +13,7 @@ console.log(myname.length);
 
 //string accessing characters
 //note -> strings are immutable you cannot change the character directly
-//str[0] = 'K'; // ❌ This won't work
+//str[0] = 'K'; //  This wont work
 
 //charAt() method
 
@@ -31,7 +31,6 @@ console.log(newString.trimEnd());
 
 
 //?searching in the strings
-
 
 
 const newstr3434 = "Hello, JavaScript!";
@@ -99,14 +98,14 @@ console.log(text.slice(-4));
 console.log(text.slice(-4, 10));
 
 // substring(start, end)
-//similar to slice but doesnot support negative values
+//similar to slice but doesnot support negative values 
 //last index is also not  included in it
 
 console.log(text.substring(0, 4)); //Java
 console.log(text.substring(4, 0)); //Java
 
 //replacing text
-// 📌 replace() & replaceAll()
+//  replace() & replaceAll()
 // it returns a new string does not change the actual string 
 
 let newstr = "I love JavaScript!";
@@ -133,7 +132,7 @@ console.log(sentence.replace(/apple/gi, "change"));
 
 //*  Splitting & Joining Strings
 
-// 📌 split() (Convert String → Array)
+//  split() (Convert String → Array)
 //it converts string into array
 let newsentence = "Learn JS with mastery";
 console.log(newsentence.split(""));

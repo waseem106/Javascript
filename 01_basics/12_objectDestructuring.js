@@ -1,3 +1,13 @@
+
+
+//! Note Destructring is actually a shallow copy of the object 
+
+
+
+
+
+
+
 const user={
     name:'waseem',
     age:18,
@@ -28,3 +38,48 @@ const mydata=[234,34,234,234,4]
 console.log(...mydata)
 
 
+
+
+
+const original = { name1: 'waseem', age1: 24, address: { city: 'Gujranwala' } };
+
+const [name1,age1,address,city]=original
+console.log(name1,age1,address,city)
+
+
+const user2 = {
+    info: {
+      personal: {
+        fullName: "Waseem Aziz",
+        age: 24
+      }
+    }
+  };
+
+  
+
+  const {info:{personal:{fullName}}}=user
+  console.log(fullName)
+
+
+
+
+  const data2 = {
+    user4: {
+      id: 7,
+      profile: {
+        name3: "waseem",
+        settings: {
+          theme: "dark"
+        }
+      }
+    }
+  };
+  
+
+
+  const{user4:{id,profile:{name3,settings:{theme}}}}=data2
+
+  console.log(id)
+  console.log(name3)
+  console.log(theme)

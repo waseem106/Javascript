@@ -1,11 +1,7 @@
 // * defining a object in js
 //using object literal 
 //using the new keyword
-//using an object constructor
 
-
-
-// Object.create    creating object by literal
 
 
 
@@ -16,7 +12,7 @@ const user={
     name:"waseem",
     age:12,
     email:"waseemaziz@devsloop.com",
-    [mySymbol]:"key2"    //using symbol in the object
+    [mySymbol]:"key2"    
 }
 
 
@@ -88,9 +84,9 @@ const obj1={1:"a",2:'b'}
 const obj2={3:"a",4:'b'}
 
 //! const obj3={obj1,obj2}  /?{ obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } }
-                        //? it makes nested object donot pass the propeties for that we will use Object.assign()
+//? it makes nested object donot pass the propeties for that we will use Object.assign()
 
-
+    
 // const obj3=Object.assign({},obj1,obj2)
 
 

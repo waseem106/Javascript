@@ -29,9 +29,7 @@ testingTruthy([])          //truthy
 
 
 
-
-
-
+Number("12")
 // console.log(1==="1")     false
 // console.log(true==="true")   false
 
@@ -106,3 +104,6 @@ testingTruthy([])          //truthy
 // These concepts play a big role in things like type coercion, conditional statements, and loops, where JavaScript automatically converts values to booleans. It's part of how the language handles different types of values in boolean-checking situations.
 
 // In JavaScript, truthy and falsy values refer to how values are evaluated within Boolean contexts, like conditionals. Truthy values evaluate to true, and falsy ones evaluate to false. This is important in writing concise code that doesn't require explicit boolean comparisons.
+const user = undefined, {}, null, {name: "waseem"}, {name: "waseem", id: ""}
+
+if(user.id)

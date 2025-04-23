@@ -155,7 +155,8 @@ console.log(myArray2)
 
 
 //*  Arrays.keys() it returns a object(array iterator) that contains the indexes of array
-
+// it parse the holes also doesnot skip holes like map() and foreach()
+//it gives iterator that represent all the index of array
 const fruits=["mango","apple","orange"]
 const res=fruits.keys()
 console.log(res)
@@ -167,13 +168,14 @@ for(let x of res){
 
 
 // *  Arrays.entries() returns a object(array iterator) that contain key value pairs
+// it gives use keys+values like a good package 
 
 const entries=fruits.entries()
 console.log(entries)
 
-for(let x of entries)
+for(let [x,value] of entries)
 {
-    console.log(x)
+    console.log(x,value)
 }
 
 
