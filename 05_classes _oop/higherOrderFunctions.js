@@ -3,7 +3,7 @@ function sayName(name){
 }
 
 function processInformation(callback){
-    console.log(sayName)
+    console.log(callback)
 }
 
 
