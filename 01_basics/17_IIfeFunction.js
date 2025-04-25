@@ -15,3 +15,4 @@
 ((name)=>{
     console.log(`i am iife arrrow function ${name}`)
 })("waseem");
+

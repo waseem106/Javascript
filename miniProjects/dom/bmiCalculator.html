@@ -104,7 +104,10 @@
             const weight = parseInt(document.querySelector("#weight").value)
             let hieght = parseFloat(document.querySelector("#hieght").value)
             hieght = hieght * 0.3048
-            const bmi = parseFloat(weight / hieght ** 2)
+            let bmi = parseFloat(weight / hieght ** 2)
+            bmi=(bmi.toFixed(2))
+
+
             const h2 = document.createElement('h2')
             if (bmi >= 18.5 && bmi < 25) {
                 h2.style.color = "green"

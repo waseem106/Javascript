@@ -25,3 +25,18 @@ function createPlayer(name, health) {
   console.log(p1)
   console.log(p2)
   
+
+
+
+
+  function factoryFunction(name){
+    return {
+      talk(){
+        return `My name is ${name}`
+      }
+    }
+  }
+
+  const newOBj1=factoryFunction("ali")
+  newOBj1.talk()
+  

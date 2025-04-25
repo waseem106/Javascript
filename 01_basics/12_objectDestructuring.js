@@ -76,7 +76,7 @@ const user2 = {
     }
   };
   
-
+const { user4 } = data2
 
   const{user4:{id,profile:{name3,settings:{theme}}}}=data2
 

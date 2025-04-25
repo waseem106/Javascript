@@ -46,3 +46,14 @@ console.log(obj1.health)
 console.log(typeof obj1)
 
 Player.Details()
+
+
+
+
+
+
+
+
+
+
+
